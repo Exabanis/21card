@@ -1,16 +1,16 @@
-package za.co.elex.tut.card;
+package com.texman.blackjack.model;
 
+import lombok.Getter;
+
+@Getter
 public enum SUIT {
 
     NONE(""), CLUBS("Clubs"), HEARTS("Hearts"), DIAMONDS("Diamonds"), SPADE("Spade");
 
-    private String suit;
+    private final String suit;
 
     SUIT(String suit) {
         this.suit = suit;
     }
 
-    public String getSuit() {
-        return suit;
-    }
 }

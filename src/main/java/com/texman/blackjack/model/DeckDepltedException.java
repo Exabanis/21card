@@ -1,4 +1,4 @@
-package za.co.elex.tut.card;
+package com.texman.blackjack.model;
 
 public class DeckDepltedException extends Exception {
     public DeckDepltedException() {

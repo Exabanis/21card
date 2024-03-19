@@ -1,18 +1,17 @@
-package za.co.elex.tut.card;
+package com.texman.blackjack.model;
+
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@Getter
 public class Hand {
-    private List<Card> hand;
+    private final List<Card> hand;
 
     public Hand() {
         this.hand = new ArrayList<>();
-    }
-
-    public List<Card> getHand() {
-        return hand;
     }
 
     public int handValue(){
@@ -20,18 +19,17 @@ public class Hand {
         boolean ace = hasAce(hand);
         int sum = 0;
         while(nextCard.hasNext()){
-            sum += nextCard.next().getType().value();
+            sum += nextCard.next().type().value();
         }
-        if (ace == true && sum + 10 <= 21)
+        if (ace && sum + 10 <= 21) {
             return sum + 10;
-
+        }
         return sum;
     }
 
     private boolean hasAce(List<Card> hand) {
-        Iterator<Card> nextCard = hand.iterator();
-        while (nextCard.hasNext()){
-            if (nextCard.next().getType().equals("Ace"))
+        for (Card card : hand) {
+            if (card.type().equals("Ace"))
                 return true;
         }
         return false;

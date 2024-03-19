@@ -1,5 +1,8 @@
-package za.co.elex.tut.card;
+package com.texman.blackjack;
 
+import com.texman.blackjack.model.Card;
+import com.texman.blackjack.model.Deck;
+import com.texman.blackjack.model.DeckDepltedException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

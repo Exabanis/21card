@@ -1,4 +1,4 @@
-package za.co.elex.tut.card;
+package com.texman.blackjack.model;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -112,7 +112,7 @@ public class Game {
             System.out.println("\n"+player.getName() + " your balance " + player.getMoney()); sleep(2000);
             if (player.getMoney() == 0){
                 System.out.println("\n"+player.getName() + " you are out of the game!!!"); sleep(2000);
-                players.remove(player);
+                players.remove(player);//concurrent modification exception potential
             }
         }
 

@@ -1,12 +1,14 @@
-package za.co.elex.tut.card;
+package com.texman.blackjack.model;
 
-import java.util.Iterator;
+import lombok.Getter;
 import java.util.List;
 
 public class Player extends Person {
     private Hand hand = new Hand();
     private Dealer dealer;
+    @Getter
     private int money;
+    @Getter
     private int bet;
 
     public Player(String name, int money) {
@@ -26,16 +28,8 @@ public class Player extends Person {
         this.hand = new Hand();
     }
 
-    public int getMoney() {
-        return money;
-    }
-
     public void setMoney(int money) {
         this.money += money;
-    }
-
-    public int getBet() {
-        return bet;
     }
 
     public void setBet(int bet) {
@@ -52,5 +46,4 @@ public class Player extends Person {
     public int getTotal() {
         return hand.handValue();
     }
-
 }
